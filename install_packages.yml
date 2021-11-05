@@ -1,0 +1,12 @@
+---
+
+- name: Ansible getting started
+  gather_facts: false 
+  hosts: all
+  become: true
+  tasks:
+          - name: install apache on the servers 
+            apt:
+                    name=apache2
+                    update_cache=yes
+                    state=latest
