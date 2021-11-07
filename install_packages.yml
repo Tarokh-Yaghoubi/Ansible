@@ -1,12 +1,13 @@
 ---
 
-- name: Ansible getting started
-  gather_facts: false 
-  hosts: all
+- hosts: all
   become: true
   tasks:
-          - name: install apache on the servers 
-            apt:
-                    name=apache2
-                    update_cache=yes
-                    state=latest
+
+  - name: install apache , python and php support 
+    apt:
+      name: 
+        - "{{ python_lang }}"
+        - "{{ php_package }}"
+      state: latest 
+      update_cache: yes 
