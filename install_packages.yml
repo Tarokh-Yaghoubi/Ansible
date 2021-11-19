@@ -12,4 +12,15 @@
          - apache2 
       state: latest 
       update_cache: yes 
-
+   
+  - name: reboot the system 
+    reboot:
+        reboot_command: reboot   
+        reboot_timeout: 3600
+    when: ansible_distribution == "CentOS"
+  
+  
+  - name: copy some files in one host 
+    ansible.builtin.copy:
+            src:  /home/tarokh/Documents/text.txt
+            dest: /home/server/Desktop    
