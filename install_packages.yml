@@ -23,4 +23,9 @@
   - name: copy some files in one host 
     ansible.builtin.copy:
             src:  /home/tarokh/Documents/text.txt
-            dest: /home/server/Desktop    
+            dest: /home/server/Desktop
+
+  - name: shutdown the machine 
+    community.general.shutdown:
+            delay: 15
+               
