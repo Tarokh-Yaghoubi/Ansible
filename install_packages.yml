@@ -6,8 +6,10 @@
 
   - name: install apache , python and php support 
     apt:
-      name: 
-        - "{{ python_lang }}"
-        - "{{ php_package }}"
+      name:
+         - python
+         - libapache2-mod-php
+         - apache2 
       state: latest 
       update_cache: yes 
+
